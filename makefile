@@ -24,9 +24,7 @@ TEST_OBJS  := test_MMult.o $(NEW).o
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: 
-	del *.o
-	del *~
-	del *.x
+	make clean;
 	make test_MMult.x
 
 test_MMult.x: $(TEST_OBJS) $(UTIL) parameters.h
@@ -41,6 +39,9 @@ run:
 	./test_MMult.x >> output_$(NEW).m
 	cp output_$(OLD).m output_old.m
 	cp output_$(NEW).m output_new.m
+
+clean:
+	rm -f *.o *~ core *.x
 
 cleanall:
 	rm -f *.o *~ core *.x output*.m *.eps *.png
