@@ -6,7 +6,7 @@
 
 /* Block sizes */
 #define mc 256
-#define kc 128
+#define kc 256
 #define nb 1000
 
 #define min( i, j ) ( (i)<(j) ? (i): (j) )
